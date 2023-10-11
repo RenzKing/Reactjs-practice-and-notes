@@ -135,6 +135,8 @@ const data = [
   },
 ];
 
+// ****************************************************************************************************** //
+
 // DESTRUCTURING REFRESHER //
 
 function getBooks() {
@@ -152,6 +154,19 @@ const { title, author, publicationDate, genres, hasMovieAdaptation, pages } =
 
 // console.log(author, title, publicationDate, hasMovieAdaptation, genres, pages);
 
-const [primaryGenre, secondaryGenre, tertiaryGenre, aa] = genres;
+const [primaryGenre, secondaryGenre, ...remainingGenre] = genres;
+genres;
+// rest operator should always be at the end of destructuring operation //
+console.log(primaryGenre, secondaryGenre, remainingGenre);
 
-console.log(primaryGenre, secondaryGenre, tertiaryGenre, aa);
+const newGenre = [...genres, `epic fantasy`];
+newGenre;
+
+const updatedBook = {
+  ...book,
+  // Adding a new property
+  javascriptbook: "2023",
+  pages: 123,
+};
+// Overwriting an existing property
+updatedBook;
