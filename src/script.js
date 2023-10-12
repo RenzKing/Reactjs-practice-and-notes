@@ -147,14 +147,19 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(5);
+const book = getBook(1);
+
+const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
+  book;
+
+console.log(author, title, pages, genres, publicationDate, hasMovieAdaptation);
 
 // const { title, author, publicationDate, genres, hasMovieAdaptation, pages } =
 //   book;
 
-const { translations } = book;
-const { korean, polish } = translations;
-console.log(translations);
+// const { translations } = book;
+// const { korean, polish } = translations;
+// console.log(translations);
 // const genre1 = genres[1];
 // console.log(genre1, title, pages);
 
