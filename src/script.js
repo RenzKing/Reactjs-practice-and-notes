@@ -147,26 +147,32 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(5);
 
-const { title, author, publicationDate, genres, hasMovieAdaptation, pages } =
-  book;
+// const { title, author, publicationDate, genres, hasMovieAdaptation, pages } =
+//   book;
+
+const { translations } = book;
+const { korean, polish } = translations;
+console.log(translations);
+// const genre1 = genres[1];
+// console.log(genre1, title, pages);
 
 // console.log(author, title, publicationDate, hasMovieAdaptation, genres, pages);
 
-const [primaryGenre, secondaryGenre, ...remainingGenre] = genres;
-genres;
-// rest operator should always be at the end of destructuring operation //
-console.log(primaryGenre, secondaryGenre, remainingGenre);
+// const [primaryGenre, secondaryGenre, ...remainingGenre] = genres;
+// genres;
+// // rest operator should always be at the end of destructuring operation //
+// console.log(primaryGenre, secondaryGenre, remainingGenre);
 
-const newGenre = [...genres, `epic fantasy`];
-newGenre;
+// const newGenre = [...genres, `epic fantasy`];
+// newGenre;
 
-const updatedBook = {
-  ...book,
-  // Adding a new property
-  javascriptbook: "2023",
-  pages: 123,
-};
-// Overwriting an existing property
-updatedBook;
+// const updatedBook = {
+//   ...book,
+//   // Adding a new property
+//   javascriptbook: "2023",
+//   pages: 123,
+// };
+// // Overwriting an existing property
+// updatedBook;
