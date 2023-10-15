@@ -147,7 +147,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(1);
+const book = getBook(2);
 
 const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
   book;
@@ -201,7 +201,83 @@ const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
 // // Overwriting an existing property
 // updatedBook;
 
-const summary = `${title} is a book that is 
-${pages > 1000 ? "over a thousand" : "less than a thousand"} pages.`;
+// const getYear = (str) => {
+//   return str.split("-")[0];
+// };
 
-summary;
+// const summary = `${title} is a book that is
+// ${pages > 1000 ? "over a thousand" : "less than a thousand"} pages in ${getYear(
+//   publicationDate
+// )}!`;
+
+// summary;
+
+// const spanishTranslated = book.translations.spanish || "NOT TRANSLATED";
+
+// spanishTranslated;
+
+// const wrongCount = book.reviews.librarything.reviewsCount ?? "no data";
+
+// console.log(wrongCount);
+// const getTotalReviewCount = (book) => {
+//   const goodreads = book.reviews?.goodreads?.reviewsCount;
+//   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+//   return goodreads + librarything;
+// };
+
+// console.log(getTotalReviewCount(book));
+
+const books = getBooks();
+
+// const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+
+// console.log(x);
+
+// const reviews = books.map((book) => {
+//   const goodReads = book.reviews?.goodreads?.reviewsCount;
+//   const librarything = book.reviews?.reviewcount ?? 0;
+
+//   return `${goodReads + librarything}`;
+// });
+
+// reviews;
+
+// const essentialData = books.map((book) => {
+//   const author = book.author;
+//   const title = book.title;
+//   return {
+//     author: author,
+//     title: title,
+//   };
+// });
+
+// essentialData;
+
+const longBooksWithMovie = books
+  .filter((book) => book.pages > 500 && book.hasMovieAdaptation)
+  .map((book) => book.title);
+
+longBooksWithMovie;
+
+const adventure = books
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book) => book.title);
+adventure;
+
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+
+pagesAllBooks;
+
+const ascend = [1, 2, 9, 6, 3, 8];
+const descend = [1, 2, 9, 6, 3, 8];
+
+const ascended = ascend.slice().sort((a, b) => a - b);
+const descended = descend.slice().sort((a, b) => b - a);
+
+ascended;
+
+descended;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+
+sortedByPages;
