@@ -152,7 +152,26 @@ const book = getBook(1);
 const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
   book;
 
-console.log(author, title, pages, genres, publicationDate, hasMovieAdaptation);
+// REST OPERATOR //
+// const [gen1, gen2, ...otherGens] = genres;
+// console.log(gen1, gen2, otherGens);
+
+// SPREAD OPERATOR //
+
+// const newGenre = [
+//   ...genres,
+//   // added genres //
+//   "Added Spread",
+// ];
+// console.log(newGenre);
+
+// const updatedBook = {
+//   ...book,
+//   //updated pages //
+//   pages: 12345,
+// };
+
+// console.log(updatedBook);
 
 // const { title, author, publicationDate, genres, hasMovieAdaptation, pages } =
 //   book;
@@ -181,3 +200,8 @@ console.log(author, title, pages, genres, publicationDate, hasMovieAdaptation);
 // };
 // // Overwriting an existing property
 // updatedBook;
+
+const summary = `${title} is a book that is 
+${pages > 1000 ? "over a thousand" : "less than a thousand"} pages.`;
+
+summary;
