@@ -253,75 +253,91 @@ const books = getBooks();
 
 // essentialData;
 
-const longBooksWithMovie = books
-  .filter((book) => book.pages > 500 && book.hasMovieAdaptation)
-  .map((book) => book.title);
+// const longBooksWithMovie = books
+//   .filter((book) => book.pages > 500 && book.hasMovieAdaptation)
+//   .map((book) => book.title);
 
-longBooksWithMovie;
+// longBooksWithMovie;
 
-const adventure = books
-  .filter((book) => book.genres.includes("adventure"))
-  .map((book) => book.title);
-adventure;
+// const adventure = books
+//   .filter((book) => book.genres.includes("adventure"))
+//   .map((book) => book.title);
+// adventure;
 
-const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+// const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
 
-pagesAllBooks;
+// pagesAllBooks;
 
-const ascend = [1, 2, 9, 6, 3, 8];
-const descend = [1, 2, 9, 6, 3, 8];
+// const ascend = [1, 2, 9, 6, 3, 8];
+// const descend = [1, 2, 9, 6, 3, 8];
 
-const ascended = ascend.slice().sort((a, b) => a - b);
-const descended = descend.slice().sort((a, b) => b - a);
+// const ascended = ascend.slice().sort((a, b) => a - b);
+// const descended = descend.slice().sort((a, b) => b - a);
 
-ascended;
+// ascended;
 
-descended;
+// descended;
 
-const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+// const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
 
-sortedByPages;
+// sortedByPages;
 
-const newBook = {
-  id: 6,
-  title: "Harry Potter and the Chamber of Secrets",
-  author: "JKR",
-};
+// const newBook = {
+//   id: 6,
+//   title: "Harry Potter and the Chamber of Secrets",
+//   author: "JKR",
+// };
 
-// // ADDING OBJECT IN ARRAY
-// const booksAfterAdd = [...books, newBook];
+// // // ADDING OBJECT IN ARRAY
+// // const booksAfterAdd = [...books, newBook];
 
-// booksAfterAdd;
+// // booksAfterAdd;
 
-// // DELETING OBJECT FROM ARRAY
-// const deleteBook = booksAfterAdd.sort().filter((book) => book.id !== 3);
+// // // DELETING OBJECT FROM ARRAY
+// // const deleteBook = booksAfterAdd.sort().filter((book) => book.id !== 3);
 
-// deleteBook;
+// // deleteBook;
 
-// // UPDATING FROM ARRAY
+// // // UPDATING FROM ARRAY
 
-// const updateBook = deleteBook.map((book) =>
-//   book.id === 2 ? { ...book, pages: 10000000 } : book
+// // const updateBook = deleteBook.map((book) =>
+// //   book.id === 2 ? { ...book, pages: 10000000 } : book
+// // );
+
+// // updateBook;
+
+// const NewBook = {
+//   id: 6,
+//   title: "Batang Quiapo",
+//   Author: "renz",
+// };
+
+// const addNewBook = [...books, NewBook];
+
+// addNewBook;
+
+// const updateBook = addNewBook.map((book) =>
+//   book.id === 3 ? { ...book, title: "King", author: "renz" } : book
 // );
 
 // updateBook;
 
-const NewBook = {
-  id: 6,
-  title: "Batang Quiapo",
-  Author: "renz",
-};
+// const deleteBook = updateBook.filter((book) => book.id !== 3);
 
-const addNewBook = [...books, NewBook];
+// deleteBook;
 
-addNewBook;
+// const fetching = fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
 
-const updateBook = addNewBook.map((book) =>
-  book.id === 3 ? { ...book, title: "King", author: "renz" } : book
-);
+// console.log(fetching);
 
-updateBook;
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
+}
 
-const deleteBook = updateBook.filter((book) => book.id !== 3);
+getTodos();
 
-deleteBook;
+console.log("KingPogi");
