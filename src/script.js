@@ -288,20 +288,40 @@ const newBook = {
   author: "JKR",
 };
 
-// ADDING OBJECT IN ARRAY
-const booksAfterAdd = [...books, newBook];
+// // ADDING OBJECT IN ARRAY
+// const booksAfterAdd = [...books, newBook];
 
-booksAfterAdd;
+// booksAfterAdd;
 
-// DELETING OBJECT FROM ARRAY
-const deleteBook = booksAfterAdd.sort().filter((book) => book.id !== 3);
+// // DELETING OBJECT FROM ARRAY
+// const deleteBook = booksAfterAdd.sort().filter((book) => book.id !== 3);
 
-deleteBook;
+// deleteBook;
 
-// UPDATING FROM ARRAY
+// // UPDATING FROM ARRAY
 
-const updateBook = deleteBook.map((book) =>
-  book.id === 2 ? { ...book, pages: 10000000 } : book
+// const updateBook = deleteBook.map((book) =>
+//   book.id === 2 ? { ...book, pages: 10000000 } : book
+// );
+
+// updateBook;
+
+const NewBook = {
+  id: 6,
+  title: "Batang Quiapo",
+  Author: "renz",
+};
+
+const addNewBook = [...books, NewBook];
+
+addNewBook;
+
+const updateBook = addNewBook.map((book) =>
+  book.id === 3 ? { ...book, title: "King", author: "renz" } : book
 );
 
 updateBook;
+
+const deleteBook = updateBook.filter((book) => book.id !== 3);
+
+deleteBook;
